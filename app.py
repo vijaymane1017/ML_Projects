@@ -28,18 +28,5 @@ def predict_placement():
     else:
         return "<h1 style='color:orange'>VIRGINICA</h1>"
     
-# @app.route("/predict",methods=["GET"])
-# def predict_placement():
-#     cgpa=float(request.args.get("cgpa"))
-#     iq=float(request.args.get("iq"))
-#     profile_score=float(request.args.get("profile_score"))
-    
-    
-#     result=model.predict(np.array([[cgpa,iq,profile_score]]))
-    
-#     if result[0]==1:
-#         return "<h1 style='color:green'>PLACED</h1>"
-#     else:
-#         return "<h1 style='color:red'>NOT PLACED</h1>"   
-
-app.run(debug=True,port=5001)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0',port=8080)
