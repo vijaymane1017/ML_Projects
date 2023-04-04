@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        p {outline-color:rgb(12, 0, 0);}
+        p.outset {outline-style: outset;}
+        body {
+          background-color: #f0ec09;
+             }
+             input[type=submit] {
+  width: 50%;
+  background-color:   #f0ec09;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+div {
+  border-radius: 5px;
+  background-color: #50b6f1;
+  padding: 20px;
+}
+
+    </style>
+
+
+    <meta charset="UTF-8">
+    <title>SPECIES PREDICTOR !!</title>
+</head>
+<body>
+
+    <h1 style="font-family:verdana;">SPECIES PREDICTOR !!</h1>
+    {% if result %}
+        <p>{{ result }}</p>
+    {% endif %}
+<div>
+    <p class="outset">
+    <form method="POST" action="/predict">
+        <label>Enter Sepel Length</label><br>
+        <input type="text" name="se_l" placeholder="should be in Between 4-8"><br><br>
+
+        <label>Enter Sepel Width</label><br>
+        <input type="text" name="se_w" placeholder="should be in Between 1-5"><br><br>
+
+        <label>Enter Petel Length</label><br>
+        <input type="text" name="pe_l" placeholder="should be in Between 0.5-7"><br><br>
+
+        <label>Enter Petel Width</label><br>
+        <input type="text" name="pe_w" placeholder="should be in Between 0.1-3"><br><br>
+
+        <input type="submit" value="Predict"><br><br>
+    </form></p>
+    </div>
+
+</body>
+</html>
